@@ -1,0 +1,109 @@
+@import "../../sass/colors.scss";
+@import "../../sass/mixins";
+
+.Element {
+  width: 500px;
+  margin: 10px 0;
+  max-height: fit-content;
+  background-color: lightcyan;
+  border: 2px solid lightblue;
+  padding: 10px;
+  word-break: break-all;
+
+  &-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &-text {
+    &-1,
+    &-2 {
+      max-width: 350px;
+    }
+
+    &-1 {
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    &-2 {
+      white-space: pre-wrap;
+    }
+
+    &-3 {
+      max-width: 100px;
+      width: 50px;
+      margin-left: 50px;
+      height: 15px;
+    }
+
+    &-Error {
+      color: red;
+      margin-bottom: 5px;
+    }
+  }
+
+  .icons {
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+
+    .icon {
+      width: 27px;
+      height: 27px;
+      cursor: pointer;
+      margin-right: 5px;
+    }
+  }
+
+  .Input {
+    width: 400px;
+    height: 25px;
+  }
+
+  .Textarea {
+    display: flex;
+    width: 400px;
+    margin: 5px 0;
+    min-height: 42px;
+    .area {
+      width: 100%;
+    }
+  }
+
+  .Button {
+    width: 65px;
+    height: 50px;
+  }
+
+  @include media-breakpoint-only(xs) {
+    width: 300px;
+    &-row-reverce {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    .Textarea {
+      width: 100%;
+      display: flex;
+      .area {
+        min-width: 0;
+        width: 100%;
+      }
+    }
+
+    .Input {
+      width: 200px;
+    }
+  }
+}
+
+.Error {
+  border: 1px solid red;
+}

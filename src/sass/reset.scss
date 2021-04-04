@@ -1,0 +1,80 @@
+@import '~normalize.css/normalize.css';
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+ul {
+  list-style-type: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+button, a {
+  font-family: inherit;
+  font-weight: inherit;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    color 0.3s ease;
+}
+
+.trix-content {
+  font-weight: 400;
+
+  .attachment__caption--editing,
+  .attachment__progress,
+  .trix-button-group {
+    display: none;
+  }
+
+  img {
+    height: 100%;
+  }
+
+  ol, ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul {
+    list-style-type: unset;
+  }
+
+  h1 {
+    font-size: initial;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+.TextEditor {
+  .trix-content {
+    .attachment__caption--editing,
+    .trix-button-group {
+      display: flex;
+    }
+  }
+}

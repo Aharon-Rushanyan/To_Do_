@@ -1,0 +1,49 @@
+@import "../../sass/colors.scss";
+@import "../../sass/mixins";
+
+.NewElement {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 155px;
+  border: 2px solid lightblue;
+  align-items: center;
+
+  .Input {
+    margin-top: 10px;
+  }
+
+  .Button {
+    margin-top: 10px;
+  }
+
+  .Textarea {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .area {
+    padding: 10px 16px;
+    width: 100%;
+  }
+
+  .Buttons {
+    width: 183px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include media-breakpoint-only(xs) {
+    width: 300px;
+    padding: 20px 0;
+
+    .Input {
+      width: 200px;
+    }
+
+    .Textarea {
+      width: 200px;
+    }
+  }
+}

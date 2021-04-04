@@ -1,0 +1,68 @@
+@import 'colors';
+
+//
+// Media Queries
+//
+
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins/breakpoints';
+
+//
+// Form Controls States
+//
+
+@mixin invalid {
+  border-color: $red;
+  box-shadow: inset 0 0 0 1px $red;
+
+  .Form_private & {
+    border-color: $red;
+    box-shadow: inset 0 0 0 1px $red;
+  }
+}
+
+@mixin focus {
+  border-color: $primary-blue;
+  box-shadow: inset 0 0 0 1px $primary-blue;
+  outline: none;
+
+  .Form_private & {
+    border-color: $primary-blue;
+    box-shadow: inset 0 0 0 1px $primary-blue;
+  }
+}
+
+@mixin disabled {
+  background-color: $grey-2;
+  border-color: $grey-2;
+  cursor: default;
+
+  &::placeholder {
+    color: $grey-3;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  .Form_private & {
+    background-color: $grey-1;
+    border-color: #d9dadb;
+  }
+}
+
+//
+// Form Controls Sizing
+//
+
+// TODO: Add rest of sizes
+@mixin textarea-min-height($rows, $size) {
+  @if $size == sm {
+    min-height: (22px * $rows) + (6px * 2) + (1px * 2);
+
+    @include media-breakpoint-up(sm) {
+      min-height: (20px * $rows) + (7px * 2) + (1px * 2);
+    }
+  }
+}

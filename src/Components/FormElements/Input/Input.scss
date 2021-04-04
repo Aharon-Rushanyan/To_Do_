@@ -1,0 +1,160 @@
+@import '../../../sass/colors.scss';
+@import '../../../sass/mixins.scss';
+
+.Input {
+  position: relative;
+  display: flex;
+
+  input {
+    min-width: 0; // Fix for FF
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid $grey-5;
+    border-radius: 4px;
+    box-shadow: none;
+    font-weight: 500;
+    color: $grey-7;
+    appearance: none;
+    transition:
+      background-color 0.3s ease,
+      border-color 0.3s ease,
+      box-shadow 0.3s ease,
+      color 0.3s ease;
+
+    &:focus {
+      @include focus;
+    }
+
+    &::placeholder {
+      color: $grey-3;
+    }
+
+    .Form_private & {
+      background-color: #fff;
+      border-color: #d9dadb;
+    }
+  }
+
+  &_textRight {
+    input {
+      border-radius: 4px 0 0 4px;
+    }
+
+    .Input-Text {
+      border-radius: 0 4px 4px 0;
+
+      .Form_private & {
+        border: 1px solid #d9dadb;
+        border-left: 0;
+      }
+    }
+  }
+
+  .SvgIcon {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+  &-Text {
+    display: flex;
+    align-items: center;
+    background-color: $grey-2;
+    font-weight: 500;
+    color: $grey-6;
+  }
+
+  &_lg {
+    input {
+      padding: 16px 20px;
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    .Input-Text {
+      padding: 0 16px;
+    }
+
+    &.Input_iconRight {
+      input {
+        padding-right: 40px;
+      }
+
+      .SvgIcon {
+        width: 24px;
+        height: 24px;
+        right: 12px;
+
+        path {
+          fill: $grey-7;
+        }
+      }
+    }
+  }
+
+  &_md {
+    input {
+      padding: 10px 16px;
+      font-size: 16px;
+      line-height: 22px;
+
+      @include media-breakpoint-up(sm) {
+        padding: 11px 16px;
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+
+    .Input-Text {
+      padding: 0 14px;
+    }
+
+    &.Input_iconRight {
+      input {
+        padding-right: 48px;
+      }
+
+      .SvgIcon {
+        width: 24px;
+        height: 24px;
+        right: 12px;
+
+        path {
+          fill: $grey-5;
+        }
+      }
+    }
+  }
+
+  &_sm {
+    input {
+      padding: 6px 12px;
+      font-size: 16px;
+      line-height: 22px;
+
+      @include media-breakpoint-up(sm) {
+        padding: 7px 12px;
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+
+    .SvgIcon {
+      width: 20px;
+      height: 20px;
+      right: 8px;
+    }
+  }
+
+  &_disabled {
+    input {
+      @include disabled;
+    }
+  }
+
+  &_invalid {
+    input {
+      @include invalid;
+    }
+  }
+}

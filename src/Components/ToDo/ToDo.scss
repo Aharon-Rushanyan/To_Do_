@@ -1,0 +1,68 @@
+.ToDo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .Page-Name {
+    margin: 15px 0;
+    font-size: 25px;
+  }
+
+  .Elements {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .Loading-Main {
+    margin-top: 50px;
+  }
+
+  .Loading-Add {
+    margin-top: 10px;
+  }
+
+  .Add-New {
+    margin-top: 20px;
+  }
+
+  .modal-dialog {
+    display: flex;
+    justify-content: center;
+  }
+
+  .modal-content {
+    width: 250px;
+  }
+
+  .modal-header {
+    padding: 5px 5px;
+    border: none;
+  }
+
+  .modal-body {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    border: none;
+
+    > p {
+      font-weight: 700;
+    }
+  }
+
+  .modal-footer {
+    display: flex;
+    justify-content: center;
+    border: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 7px;
+    .Button {
+      width: 60px;
+    }
+  }
+}

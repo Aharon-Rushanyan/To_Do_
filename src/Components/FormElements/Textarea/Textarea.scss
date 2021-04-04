@@ -1,0 +1,93 @@
+@import "../../../sass/colors.scss";
+@import "../../../sass/mixins";
+@import "../../../sass/mixins";
+
+.Textarea {
+  position: relative;
+
+  textarea {
+    display: block;
+    width: 100%; // Allow to resize height only
+    background-color: white;
+    border: 1px solid #898f9b;
+    border-radius: 4px;
+    box-shadow: none;
+    font-weight: 400;
+    font-family: inherit;
+    color: $grey-7;
+    appearance: none;
+    transition:
+      // background-color 0.3s ease,
+      border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+
+    &:focus {
+      @include focus;
+    }
+
+    &::placeholder {
+      color: $grey-3;
+    }
+
+    .Form_private & {
+      background-color: transparent;
+      border-color: #d9dadb;
+    }
+  }
+
+  &_lg {
+    textarea {
+      $_rows: 5;
+      min-height: (22px * $_rows) + (16px * 2) + (1px * 2);
+      padding: 16px 20px;
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  &_md {
+    textarea {
+      $_rows: 4;
+
+      min-height: (22px * $_rows) + (10px * 2) + (1px * 2);
+      padding: 10px 16px;
+      font-size: 16px;
+      line-height: 22px;
+
+      @include media-breakpoint-up(sm) {
+        min-height: (20px * $_rows) + (11px * 2) + (1px * 2);
+        padding: 11px 16px;
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  &_sm {
+    textarea {
+      padding: 6px 12px;
+      font-size: 16px;
+      line-height: 22px;
+
+      @include media-breakpoint-up(sm) {
+        width: 100%;
+        padding: 7px 12px;
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      @include textarea-min-height($rows: 1, $size: sm);
+    }
+  }
+
+  &_invalid {
+    textarea {
+      @include invalid;
+    }
+  }
+
+  &_disabled {
+    textarea {
+      @include disabled;
+    }
+  }
+}
